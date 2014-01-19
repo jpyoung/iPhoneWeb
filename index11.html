@@ -1,0 +1,114 @@
+<html>
+<head>
+
+<title>Try 11</title>
+
+<link rel="stylesheet" href="basePhoneStyle.css">
+<script src="jquery-1.10.2.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+	
+	
+	var phoneOn = false;
+	
+	
+	console.log("The window width is: " + $( window ).width());
+	
+	$("#resumeButton").hide();
+	
+
+function centerPhone() {
+	// $("#baseShape").css("margin-left", "+=200");
+//	$("#baseShape").animate({marginLeft: "+=200"});
+	
+	
+	
+	var windowWidth = $( window ).width();
+	var phoneWidth = 567;
+	
+	var re = (windowWidth - phoneWidth) / 2;
+	
+	console.log("Remainer is: " + re);
+	
+	
+	var shiftString = "+=" + re;
+	
+	$("#baseShape").animate({marginLeft: shiftString});
+	
+	console.log("centerPhone function was called");
+}
+
+
+$("#testButton").click(function(){
+	// alert("hello world");
+	centerPhone();
+});
+
+
+$("#innerPower").click(function(){
+	console.log("Clicked the power button");
+	
+	if (!phoneOn) {
+		// phone is powered on
+		// $("#screenBlack").css("backgroundColor", "rgba(135, 199, 224, 0.98)");
+		$('#screenBlack').css("background-image", "url(images/waves.jpg)");
+		$("#screenBlack").css("backgroundSize", "100%"); 
+		$("#resumeButton").show();
+		phoneOn = true;
+	} else {
+		// phone is powered off
+		$("#screenBlack").css("backgroundColor", "black");
+		$("#resumeButton").hide();
+		phoneOn = false;
+	}
+});
+
+	
+});
+</script>
+	
+
+<style>
+	
+	#resumeButton {
+		background-color: rgb(77, 150, 83);
+		width: 150px;
+		height: 50px;
+		margin-left: 60px;
+		margin-top: 30px;
+		display: block;
+		border-radius: 5px;
+	}
+	
+</style>
+	
+</head>
+
+<body>
+	
+	<button id="testButton">TestButton</button>
+	
+	<div id="baseShape">
+		
+		<div id="earphone"></div>
+		
+		
+		<div id="screenBlack">
+		
+		
+		<div id="resumeButton">View Resume</div>
+		
+		</div> <!-- end div screenBlack -->
+		
+		<div id="powerButton">
+			<div id="topSpacer"></div>
+			<div id="innerPower"></div>
+		</div>  <!-- end div powerButton-->
+		
+	</div>	<!-- end div baseShape -->
+
+</body>
+</html>
