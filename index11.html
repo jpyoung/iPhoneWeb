@@ -18,7 +18,10 @@ $(document).ready(function() {
 	console.log("The window width is: " + $( window ).width());
 	
 	$("#resumeButton").hide();
-	
+		$("#iconButton1").hide();
+		$("#iconButton2").hide();
+		$("#iconButton3").hide();
+		$("#iconButton4").hide();
 
 function centerPhone() {
 	// $("#baseShape").css("margin-left", "+=200");
@@ -57,6 +60,9 @@ $("#innerPower").click(function(){
 		$('#screenBlack').css("background-image", "url(images/waves.jpg)");
 		$("#screenBlack").css("backgroundSize", "100%"); 
 		$("#resumeButton").show();
+		for(var x = 1; x <= 4; x++) {
+			$("#iconButton" + x).show();
+		}
 		phoneOn = true;
 	} else {
 		// phone is powered off
@@ -73,7 +79,7 @@ $("#innerPower").click(function(){
 
 <style>
 	
-	#resumeButton {
+/*	#resumeButton {
 		background-color: rgb(77, 150, 83);
 		width: 150px;
 		height: 50px;
@@ -81,6 +87,17 @@ $("#innerPower").click(function(){
 		margin-top: 30px;
 		display: block;
 		border-radius: 5px;
+	}*/
+	
+	
+	#resumeButton {
+	background-color: rgb(77, 150, 83);
+	width: 270px;
+	height: 60px;
+
+	margin-top: 350px;
+	display: block;
+
 	}
 	
 	
@@ -126,10 +143,10 @@ $("#innerPower").click(function(){
 		
 		<div id="screenBlack">
 		
-		<div class="icon second"></div>
-			<div class="icon first"></div>
-				<div class="icon third"></div>
-					<div class="icon fourth"></div>
+		<div id="iconButton1" class="icon second"></div>
+			<div id="iconButton2" class="icon first"></div>
+				<div id="iconButton3" class="icon third"></div>
+					<div id="iconButton4" class="icon fourth"></div>
 		
 		<div id="resumeButton">View Resume</div>
 		
