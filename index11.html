@@ -51,6 +51,29 @@ $("#testButton").click(function(){
 });
 
 
+
+$("#testButton2").click(function(){
+	 //alert("hello world");
+	
+
+	$("#baseShape").css({'-webkit-transform' : 'rotate(90deg)',
+	                 '-moz-transform' : 'rotate(90deg)',
+	                 '-ms-transform' : 'rotate(90deg)',
+	                 'transform' : 'rotate(90deg)'});
+});
+
+
+$("#testButton3").click(function(){
+	 //alert("hello world");
+	
+
+	$("#baseShape").css({'-webkit-transform' : 'rotate(-90deg)',
+	                 '-moz-transform' : 'rotate(-90deg)',
+	                 '-ms-transform' : 'rotate(-90deg)',
+	                 'transform' : 'rotate(-90deg)'});
+});
+
+
 $("#innerPower").click(function(){
 	console.log("Clicked the power button");
 	
@@ -66,8 +89,13 @@ $("#innerPower").click(function(){
 		phoneOn = true;
 	} else {
 		// phone is powered off
+		$("#screenBlack").css('background-image', 'none');
 		$("#screenBlack").css("backgroundColor", "black");
 		$("#resumeButton").hide();
+		for(var x = 1; x <= 4; x++) {
+			$("#iconButton" + x).hide();
+		}
+		
 		phoneOn = false;
 	}
 });
@@ -128,6 +156,15 @@ $("#innerPower").click(function(){
 		background-color: rgb(255, 163, 0);
 	}
 	
+	#camera {
+		background-color: rgba(0, 0, 0, 0.5);
+		width: 10px;
+		height: 10px;
+		margin-left: 137px;
+		border-radius: 5px;
+		margin-bottom: 5px;
+	}
+	
 </style>
 	
 </head>
@@ -135,9 +172,13 @@ $("#innerPower").click(function(){
 <body>
 	
 	<button id="testButton">TestButton</button>
+	<button id="testButton2">Rotate Right</button>
+	<button id="testButton3">Rotate Left</button>
 	
 	<div id="baseShape">
 		
+		
+		<div id="camera"></div>
 		<div id="earphone"></div>
 		
 		
